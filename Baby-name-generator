@@ -1,1 +1,13 @@
-print("hello")
+import tkinter as tk
+from tkinter import ttk
+
+window = tk.Tk()
+
+window.rowconfigure([0, 1, 2, 3, 4], minsize=150, weight=1)
+window.columnconfigure([0, 1], minsize=250, weight=1)
+
+
+gender_frame = tk.Frame(master=window, bg="lightgreen")
+gender_frame.grid(row=1, column=1, sticky="nsew")
+
+window.mainloop()
