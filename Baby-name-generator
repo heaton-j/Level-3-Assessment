@@ -16,6 +16,7 @@ main_title.grid(row=0, column=0)
 gender_frame = tk.Frame(master=window, bg="lightgreen")
 gender_frame.grid(row=1, column=1, sticky="nsew")
 
+
 # background frame for style option
 style_frame = tk.Frame(master=window, bg="lightblue")
 style_frame.grid(row=2, column=1, sticky="nsew")
@@ -25,15 +26,37 @@ number_frame = tk.Frame(master=window, bg="lightpink")
 number_frame.grid(row=3, column=1, sticky="nsew")
 
 
-def get_gender():
-    tk.Label.config(text=gender_entry.get())
+# label for gender
+gender_label = tk.Label(text="Choose a gender", width=12, height=2,
+                        font=('Times', 8))
+gender_label.grid(row=1, column=1, sticky="n")
+
+# entry for gender
+gender_entry = tk.Entry(width=10)
+gender_entry.grid(row=1, column=1, sticky="w")
+
+# label for genders available
+gender_options = tk.Label(text="a - Girl
+                          b=Boy
+                          c=Gender Neutral")
+gender_options.grid(row=1, column=1, sticky="n")
 
 
-gender_entry = tk.Entry(gender_frame, width=10)
-gender_entry.grid(row=1, column=1)
+# label for style
+style_label = tk.Label(text="Enter a style", width=12, height=2,
+                       font=('Times', 8))
+style_label.grid(row=2, column=1, sticky="n")
+
+
+# label for number
+number_label = tk.Label(text="Enter a number between 1 - 5", width=25,
+                        height=2, font=('Times', 8))
+number_label.grid(row=3, column=1, sticky="n")
 
 
 # creating the pop up message for names
+
+
 def onClick():
     tkinter.messagebox.showinfo("Names:")
 
@@ -42,6 +65,6 @@ def onClick():
 generator_button = tk.Button(
     text="Generate Names", command=onClick, width=15, height=5, bg="red",
     fg="white")
-generator_button.grid(row=4, column=0)
+generator_button.grid(row=4, column=1)
 
 window.mainloop()
