@@ -28,17 +28,31 @@ number_frame.grid(row=3, column=1, sticky="nsew")
 
 
 # label for gender
-gender_label = tk.Label(text="Choose a gender", width=12, height=2,
-                        font=('Times', 8))
+gender_label = tk.Label(text="Enter a gender from the following :", width=26,
+                        height=2, font=('Times', 13))
 gender_label.grid(row=1, column=1, sticky="n")
 
 # labels for gender options
-gender_option = tk.Label(text="Boy, Girl, Gender Neutral")
+gender_option = tk.Label(text="Male, Female, Gender Neutral")
 gender_option.grid(row=1, column=1)
 
 # entry for gender
 gender_entry = tk.Entry(width=10)
-gender_entry.grid(row=1, column=1, pady=7, sticky="w")
+gender_entry.grid(row=1, column=1, pady=10, sticky="s")
+
+# entry button for gender
+gender_button = tk.Button(width=5)
+gender_button.grid(row=1, column=1, padx=10, sticky="se")
+
+gender_list = ["Female", "Male", "Gender Neutral"]
+
+
+def gender():
+    gender_entry = ""
+    if gender_entry in gender_list:
+        print("The gender you chose is {}".format(gender_entry))
+    else:
+        print("Please re-enter a gender value from the 3 options available")
 
 
 # label for style
