@@ -4,23 +4,19 @@ import tkinter.messagebox
 
 window = tk.Tk()
 
-window.rowconfigure([0, 1, 2, 3, 4], minsize=150, weight=1)
-window.columnconfigure([0, 1], minsize=250, weight=1)
+window.rowconfigure([0, 1, 2, 3], minsize=130, weight=1)
+window.columnconfigure([0, 1, 2], minsize=200, weight=1)
 
 # main title for generator
 main_title = tk.Label(text="Baby Name Generator",
-                      width=18, height=6, font=('Times', 8))
-main_title.grid(row=0, column=0)
+                      width=18, height=6, font=('Times', 20))
+main_title.grid(row=0, column=1)
 
 
 # background frame for gender option
-gender_frame = tk.Frame(master=window, bg="lightgreen")
+gender_frame = tk.Frame(master=window, bg="lightblue")
 gender_frame.grid(row=1, column=1, sticky="nsew")
 
-
-# background frame for style option
-style_frame = tk.Frame(master=window, bg="lightblue")
-style_frame.grid(row=2, column=1, sticky="nsew")
 
 # background frame for number option
 number_frame = tk.Frame(master=window, bg="lightpink")
@@ -29,36 +25,41 @@ number_frame.grid(row=3, column=1, sticky="nsew")
 
 # label for gender
 gender_label = tk.Label(text="Enter a gender from the following :", width=26,
-                        height=2, font=('Times', 13))
+                        height=2)
 gender_label.grid(row=1, column=1, sticky="n")
-
-# labels for gender options
-gender_option = tk.Label(text="Male, Female, Gender Neutral")
-gender_option.grid(row=1, column=1)
 
 # entry for gender
 gender_entry = tk.Entry(width=10)
 gender_entry.grid(row=1, column=1, pady=10, sticky="s")
 
-# entry button for gender
-gender_button = tk.Button(width=5)
-gender_button.grid(row=1, column=1, padx=10, sticky="se")
 
-gender_list = ["Female", "Male", "Gender Neutral"]
+status1 = tk.Label(text="Please enter a gender.....")
+status1.grid(row=1, column =1, pady = 60, sticky ="n")
 
 
-def gender():
-    gender_entry = ""
-    if gender_entry in gender_list:
-        print("The gender you chose is {}".format(gender_entry))
+def isGender():
+
+
+    genders = ['Girl', 'Boy', 'Gender Neutral']
+    input1 = gender_entry.get()
+
+
+    if len(input1) == 0:
+        status1.configure(text="Please enter")
+    elif input1 in genders:
+        status1.configure(text="correct")
     else:
-        print("Please re-enter a gender value from the 3 options available")
+        status1.configure(text="Please re enter")
 
 
-# label for style
-style_label = tk.Label(text="Enter a style", width=12, height=2,
-                       font=('Times', 8))
-style_label.grid(row=2, column=1, sticky="n")
+# entry button for gender
+gender_button = tk.Button(text="Enter", width=5, command = isGender)
+gender_button.grid(row=1, column=1, pady=10, sticky="se")
+
+
+# labels for gender options
+gender_option = tk.Label(text="Male, Female, Gender Neutral")
+gender_option.grid(row=1, column=1, pady=30,sticky='n')
 
 
 # label for number
