@@ -20,7 +20,7 @@ gender_frame.grid(row=1, column=1, sticky="nsew")
 
 # background frame for number option
 number_frame = tk.Frame(master=window, bg="lightpink")
-number_frame.grid(row=3, column=1, sticky="nsew")
+number_frame.grid(row=2, column=1, sticky="nsew")
 
 
 # label for gender
@@ -40,7 +40,7 @@ status1.grid(row=1, column =1, pady = 60, sticky ="n")
 def isGender():
 
 
-    genders = ['Girl', 'Boy', 'Gender Neutral']
+    genders = ['Female', 'Male', 'Gender Neutral']
     input1 = gender_entry.get()
 
 
@@ -61,18 +61,44 @@ gender_button.grid(row=1, column=1, pady=10, sticky="se")
 gender_option = tk.Label(text="Male, Female, Gender Neutral")
 gender_option.grid(row=1, column=1, pady=30,sticky='n')
 
-
-# label for number
-number_label = tk.Label(text="Enter a number between 1 - 5", width=25,
-                        height=2, font=('Times', 8))
-number_label.grid(row=3, column=1, sticky="n")
-
-
 # creating the pop up message for names
 
 
 def onClick():
-    tkinter.messagebox.showinfo("Names:")
+    tkinter.messagebox.showinfo("Names:") 
+
+
+
+# label for number
+number_label = tk.Label(text="Enter a number between 1 - 5", width=25,
+                        height=2)
+number_label.grid(row=2, column=1, sticky="n")
+
+number_entry = tk.Entry(width=10)
+number_entry.grid(row=2, column=1, pady=10, sticky="s")
+
+status3 = tk.Label(text="Please enter a number....")
+status3.grid(row=2, column=1, pady=50, sticky="n")
+
+
+def isNumber():
+
+    numbers = ['1', '2', '3', '4', '5']
+    input3 = number_entry.get()
+
+    if len(input3) == 0:
+        status3.configure(text="Please enter")
+    elif input3 in numbers:
+        status3.configure(text="Correct")
+    else:
+        status3.configure(text="Re-enter Value")
+
+
+number_button = tk.Button(text="Enter", width=5, command=isNumber)
+number_button.grid(row=2, column=1, pady=10, sticky="se")
+
+# checking if both status are correct
+
 
 
 # button for generating the names
@@ -80,5 +106,8 @@ generator_button = tk.Button(
     text="Generate Names", command=onClick, width=15, height=5, bg="red",
     fg="white")
 generator_button.grid(row=4, column=1)
+
+
+
 
 window.mainloop()
