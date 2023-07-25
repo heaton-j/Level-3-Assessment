@@ -10,7 +10,7 @@ window.rowconfigure([0, 1, 2, 3], minsize=130, weight=1)
 window.columnconfigure([0, 1, 2], minsize=200, weight=1)
 
 # main title for generator
-main_title = tk.Label(text="Adult & Baby Name Generator",
+main_title = tk.Label(text="Baby Name Generator",
                       width=18, height=6, font=('Times', 20))
 main_title.grid(row=0, column=1)
 
@@ -39,6 +39,10 @@ status1 = tk.Label(text="Please enter a gender.....")
 status1.grid(row=1, column =1, pady = 60, sticky ="n")
 
 
+enter = "Please enter"
+correct = "Correct!"
+enter2 = "Please re-enter"
+
 def isGender():
 
 
@@ -47,12 +51,15 @@ def isGender():
 
 
     if len(input1) == 0:
-        status1.configure(text="Please enter")
+        status1.configure(text=enter)
     elif input1 in genders:
-        status1.configure(text="correct")
+        status1.configure(text=correct)
     else:
-        status1.configure(text="Please re enter")
+        status1.configure(text=enter2)
 
+gender_entry.get()
+
+status1.cget("text")
 
 # entry button for gender
 gender_button = tk.Button(text="Enter", width=5, command = isGender)
@@ -62,13 +69,6 @@ gender_button.grid(row=1, column=1, pady=10, sticky="se")
 # labels for gender options
 gender_option = tk.Label(text="Male, Female, Gender Neutral")
 gender_option.grid(row=1, column=1, pady=30,sticky='n')
-
-# creating the pop up message for names
-
-
-def onClick():
-    tkinter.messagebox.showinfo("Names:") 
-
 
 
 
@@ -90,34 +90,41 @@ def isNumber():
     input3 = number_entry.get()
 
     if len(input3) == 0:
-        status3.configure(text="Please enter")
+        status3.configure(text=enter)
     elif input3 in numbers:
-        status3.configure(text="Correct")
+        status3.configure(text=correct)
     else:
-        status3.configure(text="Re-enter Value")
+        status3.configure(text=enter2)
 
+number_entry.get()
+
+status3.cget("text")
 
 number_button = tk.Button(text="Enter", width=5, command=isNumber)
 number_button.grid(row=2, column=1, pady=10, sticky="se")
 
-# user check if both status are correct
-Check_title = tk.Label(text="Have you correctly filled out all fields?")
-Check_title.grid(row=3, column=1, pady=20)
 
-yes = tk.Checkbutton(text="Yes", width=5)
-yes.grid(row=3, column=1, pady=30, )
 
-no = tk.Checkbutton(text="No", width=5)
-no.grid(row=3, column=1, pady=40)
 
+def button():
+    if "text" in status1 != correct:
+        generator_button.config(state='normal')
+    elif "text" in status3 != correct:
+        generator_button.config(state='normal')
+    else:
+        generator_button.config(state='disbaled')
+
+
+    
 
 # button for generating the names
 generator_button = tk.Button(
-    text="Generate Names", command=onClick, width=15, height=5, bg="red",
+    text="Generate Names", command=button, width=15, height=5, bg="red",
     fg="white")
 generator_button.grid(row=4, column=1)
 
-generator_button.wait_variable
+
+    
 
 myfile = open("G:\My Drive\Digital Science\Level-3-Assessment/Names.txt","r")
 for line in myfile:
