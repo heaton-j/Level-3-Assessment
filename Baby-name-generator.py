@@ -2,13 +2,15 @@ import tkinter as tk
 from tkinter import ttk
 import tkinter.messagebox
 
+
+
 window = tk.Tk()
 
 window.rowconfigure([0, 1, 2, 3], minsize=130, weight=1)
 window.columnconfigure([0, 1, 2], minsize=200, weight=1)
 
 # main title for generator
-main_title = tk.Label(text="Baby Name Generator",
+main_title = tk.Label(text="Adult & Baby Name Generator",
                       width=18, height=6, font=('Times', 20))
 main_title.grid(row=0, column=1)
 
@@ -24,7 +26,7 @@ number_frame.grid(row=2, column=1, sticky="nsew")
 
 
 # label for gender
-gender_label = tk.Label(text="Enter a gender from the following :", width=26,
+gender_label = tk.Label(text="Enter a gender  :", width=26,
                         height=2)
 gender_label.grid(row=1, column=1, sticky="n")
 
@@ -69,6 +71,7 @@ def onClick():
 
 
 
+
 # label for number
 number_label = tk.Label(text="Enter a number between 1 - 5", width=25,
                         height=2)
@@ -83,7 +86,7 @@ status3.grid(row=2, column=1, pady=50, sticky="n")
 
 def isNumber():
 
-    numbers = ['1', '2', '3', '4', '5']
+    numbers = ['1', '2', '3', '4', '5', [6]]
     input3 = number_entry.get()
 
     if len(input3) == 0:
@@ -97,8 +100,15 @@ def isNumber():
 number_button = tk.Button(text="Enter", width=5, command=isNumber)
 number_button.grid(row=2, column=1, pady=10, sticky="se")
 
-# checking if both status are correct
+# user check if both status are correct
+Check_title = tk.Label(text="Have you correctly filled out all fields?")
+Check_title.grid(row=3, column=1, pady=20)
 
+yes = tk.Checkbutton(text="Yes", width=5)
+yes.grid(row=3, column=1, pady=30, )
+
+no = tk.Checkbutton(text="No", width=5)
+no.grid(row=3, column=1, pady=40)
 
 
 # button for generating the names
@@ -107,7 +117,15 @@ generator_button = tk.Button(
     fg="white")
 generator_button.grid(row=4, column=1)
 
+generator_button.wait_variable
 
+myfile = open("G:\My Drive\Digital Science\Level-3-Assessment/Names.txt","r")
+for line in myfile:
+    if line.startswith("Girl"):
+        print(line)
+
+
+myfile.readlines()
 
 
 window.mainloop()
