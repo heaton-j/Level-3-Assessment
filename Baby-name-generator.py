@@ -43,10 +43,11 @@ enter = "Please enter"
 correct = "Correct!"
 enter2 = "Please re-enter"
 
+genders = ['Girl', 'Boy', 'Gender Neutral']
+
 def isGender():
 
 
-    genders = ['Girl', 'Boy', 'Gender Neutral']
     input1 = gender_entry.get()
 
 
@@ -56,8 +57,10 @@ def isGender():
         status1.configure(text=correct)
     else:
         status1.configure(text=enter2)
+        
+    return
 
-gender_entry.get()
+user_gender = gender_entry.get()
 
 status1.cget("text")
 
@@ -111,20 +114,22 @@ number_button.grid(row=2, column=1, pady=10, sticky="se")
 myfile = open("G:\My Drive\Digital Science\Level-3-Assessment/Names.txt","r")
 lines = myfile.readlines()
 
-def get_gender():
-    
-    user_gender = gender_entry.get()
+user_gender = gender_entry.get()
 
-    for line in myfile:   
-        if gender_entry in myfile:
-         print(line)
-    
+def print_name():
+    for user_gender in genders:
+        if user_gender =='Girl':
+            print(lines[0:5])
+        elif user_gender =='Boy':
+            print(lines[6:9])
+   
+
 
 
 
 
 # button for generating the names
-generator_button = tk.Button(text="Generate Names",command=get_gender(), width=15, height=5, bg="red",
+generator_button = tk.Button(text="Generate Names", command = print_name, width=15, height=5, bg="red",
     fg="white")
 generator_button.grid(row=4, column=1)
 
