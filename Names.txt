@@ -1,18 +1,18 @@
-﻿Girl : Lily
-Girl : Mila
-Girl : Ava
-Girl : Amelia
-Girl : Isla
-Girl : Willow
-Girl : Olivia
-Girl : Sophie
-Girl : Harper
-Girl : Charlotte
-Girl : Chiara
-Girl : Celine
-Girl : Cora
-Girl : Audrey
-Girl : Olive
+﻿Lily
+Mila
+Ava
+Amelia
+Isla
+Willow
+Olivia
+Sophie
+Harper
+Charlotte
+Chiara
+Celine
+Cora
+Audrey
+Olive
 
 
 Luca

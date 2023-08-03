@@ -2,6 +2,9 @@ import tkinter as tk
 from tkinter import ttk
 import tkinter.messagebox
 
+myfile = open("G:\My Drive\Digital Science\Level-3-Assessment/Names.txt","r")
+lines = myfile.readlines()
+
 
 
 window = tk.Tk()
@@ -15,6 +18,13 @@ main_title = tk.Label(text="Baby Name Generator",
 main_title.grid(row=0, column=1)
 
 
+info_gender = tk.Label(text="Enter a gender for a specified name")
+info_gender.grid(row=1, column=0)
+
+info_number = tk.Label(text="Enter a number for a specific amount of names")
+info_number.grid(row=2, column=0)
+
+
 # background frame for gender option
 gender_frame = tk.Frame(master=window, bg="lightblue")
 gender_frame.grid(row=1, column=1, sticky="nsew")
@@ -25,9 +35,37 @@ number_frame = tk.Frame(master=window, bg="lightpink")
 number_frame.grid(row=2, column=1, sticky="nsew")
 
 
+def print_name(user_gender):
+    user_gender = gender_entry.get()
+    if user_gender == "Girl":
+        print(lines[0:15])
+    elif user_gender =="Boy":
+        print(lines[16:25])
+    elif user_gender =="Gender Neutral":
+        print(lines[25:27])
+    else:
+        print("Please enter an gender to get a specified name")
+
+
+def print_name2(user_number):
+    user_number = number_entry.get()
+    if user_number =="1":
+        print(lines[16])
+    elif user_number =="2":
+        print(lines[16:17])
+    elif user_number =="3":
+        print()
+    elif user_number =="4":
+        print()
+    elif user_number =="5":
+        print()
+    
+    
+
+
+
 # label for gender
-gender_label = tk.Label(text="Enter a gender  :", width=26,
-                        height=2)
+gender_label = tk.Label(text="Enter a gender  :", width=26, height=2)
 gender_label.grid(row=1, column=1, sticky="n")
 
 # entry for gender
@@ -99,7 +137,7 @@ def isNumber():
     else:
         status3.configure(text=enter2)
 
-number_entry.get()
+user_number = number_entry.get()
 
 status3.cget("text")
 
@@ -107,29 +145,10 @@ number_button = tk.Button(text="Enter", width=5, command=isNumber)
 number_button.grid(row=2, column=1, pady=10, sticky="se")
 
 
-
     
-    
-
-myfile = open("G:\My Drive\Digital Science\Level-3-Assessment/Names.txt","r")
-lines = myfile.readlines()
-
-user_gender = gender_entry.get()
-
-def print_name():
-    for user_gender in genders:
-        if user_gender =='Girl':
-            print(lines[0:5])
-        elif user_gender =='Boy':
-            print(lines[6:9])
-   
-
-
-
-
 
 # button for generating the names
-generator_button = tk.Button(text="Generate Names", command = print_name, width=15, height=5, bg="red",
+generator_button = tk.Button(text="Generate Names", command= lambda: [print_name(user_gender), print_name2(user_number)], width=15, height=5, bg="red",
     fg="white")
 generator_button.grid(row=4, column=1)
 
