@@ -50,9 +50,9 @@ def print_name(user_gender):
 def print_name2(user_number):
     user_number = number_entry.get()
     if user_number =="1":
-        print(lines[16])
+        print(lines[17])
     elif user_number =="2":
-        print(lines[16:17])
+        print(lines[17:18])
     elif user_number =="3":
         print()
     elif user_number =="4":
@@ -60,6 +60,12 @@ def print_name2(user_number):
     elif user_number =="5":
         print()
     
+def print_name3(user_gender, user_number):
+    user_gender = gender_entry.get()
+    user_number = number_entry.get()
+    if user_gender == "Girl" and user_number == "1":
+        print(lines[1])
+
     
 
 
@@ -148,7 +154,7 @@ number_button.grid(row=2, column=1, pady=10, sticky="se")
     
 
 # button for generating the names
-generator_button = tk.Button(text="Generate Names", command= lambda: [print_name(user_gender), print_name2(user_number)], width=15, height=5, bg="red",
+generator_button = tk.Button(text="Generate Names", command= lambda: [print_name(user_gender), print_name2(user_number), print_name3(user_gender, user_number)], width=15, height=5, bg="red",
     fg="white")
 generator_button.grid(row=4, column=1)
 
