@@ -34,37 +34,45 @@ gender_frame.grid(row=1, column=1, sticky="nsew")
 number_frame = tk.Frame(master=window, bg="lightpink")
 number_frame.grid(row=2, column=1, sticky="nsew")
 
-
-def print_name(user_gender):
-    user_gender = gender_entry.get()
-    if user_gender == "Girl":
-        print(lines[0:15])
-    elif user_gender =="Boy":
-        print(lines[16:25])
-    elif user_gender =="Gender Neutral":
-        print(lines[25:27])
-    else:
-        print("Please enter an gender to get a specified name")
-
-
-def print_name2(user_number):
-    user_number = number_entry.get()
-    if user_number =="1":
-        print(lines[17])
-    elif user_number =="2":
-        print(lines[17:18])
-    elif user_number =="3":
-        print()
-    elif user_number =="4":
-        print()
-    elif user_number =="5":
-        print()
+print("!! Your generated name will be shown down below when All fields are correctly filled :")
     
 def print_name3(user_gender, user_number):
     user_gender = gender_entry.get()
     user_number = number_entry.get()
     if user_gender == "Girl" and user_number == "1":
-        print(lines[1])
+        print(lines[0])
+    if user_gender =="Girl" and user_number =="2":
+        print(lines[0], lines[1])
+    if user_gender =="Girl" and user_number =="3":
+        print(lines[0], lines[1], lines[2])
+    if user_gender =="Girl" and user_number =="4":
+        print(lines[0], lines[1], lines[2], lines[3])
+    if user_gender =="Girl" and user_number =="5":
+        print(lines[0], lines[1], lines[2], lines[3], lines[4])
+    if user_gender =="Girl" and user_number =="6":
+        print(lines[0], lines[1], lines[2], lines[3], lines[4], lines[5])
+    if user_gender =="Girl" and user_number =="7":
+        print(lines[0], lines[1], lines[2], lines[3], lines[4], lines[5], lines[6])
+    if user_gender=="Girl" and user_number =="8":
+        print(lines[0], lines[1], lines[2], lines[3], lines[4], lines[5], lines[6], lines[7])
+    if user_gender =="Girl" and user_number =="9":
+        print(lines[0], lines[1], lines[2], lines[3], lines[4], lines[5], lines[6], lines[7], lines[8])
+    if user_gender =="Girl" and user_number =="10":
+        print(lines[0], lines[1], lines[2], lines[3], lines[4], lines[5], lines[6], lines[7], lines[8], lines[9])
+    elif user_gender =="Boy" and user_number =="1":
+        print(lines[12])
+    elif user_gender =="Boy" and user_number =="2":
+        print(lines[12], lines[13])
+    elif user_gender =="Boy" and user_number =="3":
+        print(lines[12], lines[13], lines[14])
+    elif user_gender =="Boy" and user_number =="4":
+        print(lines[12], lines[13], lines[14], lines[15])
+    elif user_gender =="Boy" and user_number =="5":
+        print(lines[12], lines[13], lines[14], lines[15], lines[16])
+    
+
+
+
 
     
 
@@ -133,7 +141,7 @@ status3.grid(row=2, column=1, pady=50, sticky="n")
 
 def isNumber():
 
-    numbers = ['1', '2', '3', '4', '5', [6]]
+    numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
     input3 = number_entry.get()
 
     if len(input3) == 0:
@@ -154,7 +162,7 @@ number_button.grid(row=2, column=1, pady=10, sticky="se")
     
 
 # button for generating the names
-generator_button = tk.Button(text="Generate Names", command= lambda: [print_name(user_gender), print_name2(user_number), print_name3(user_gender, user_number)], width=15, height=5, bg="red",
+generator_button = tk.Button(text="Generate Names", command= lambda: [print_name3(user_gender, user_number)], width=15, height=5, bg="red",
     fg="white")
 generator_button.grid(row=4, column=1)
 
