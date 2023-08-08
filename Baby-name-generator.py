@@ -5,6 +5,9 @@ import tkinter.messagebox
 myfile = open("G:\My Drive\Digital Science\Level-3-Assessment/Names.txt","r")
 lines = myfile.readlines()
 
+lines = [x.strip() for x in lines]
+
+
 
 
 window = tk.Tk()
@@ -34,31 +37,32 @@ gender_frame.grid(row=1, column=1, sticky="nsew")
 number_frame = tk.Frame(master=window, bg="lightpink")
 number_frame.grid(row=2, column=1, sticky="nsew")
 
+print("")
 print("!! Your generated name will be shown down below when All fields are correctly filled :")
     
 def print_name3(user_gender, user_number):
     user_gender = gender_entry.get()
     user_number = number_entry.get()
     if user_gender == "Girl" and user_number == "1":
-        print(lines[0])
+        print(lines[1])
     if user_gender =="Girl" and user_number =="2":
-        print(lines[0], lines[1])
+        print(lines[1:3])
     if user_gender =="Girl" and user_number =="3":
-        print(lines[0], lines[1], lines[2])
+        print(lines[1:4])
     if user_gender =="Girl" and user_number =="4":
-        print(lines[0], lines[1], lines[2], lines[3])
+        print(lines[1:5])
     if user_gender =="Girl" and user_number =="5":
-        print(lines[0], lines[1], lines[2], lines[3], lines[4])
+        print(lines[1:6])
     if user_gender =="Girl" and user_number =="6":
-        print(lines[0], lines[1], lines[2], lines[3], lines[4], lines[5])
+        print(lines[1:7])
     if user_gender =="Girl" and user_number =="7":
-        print(lines[0], lines[1], lines[2], lines[3], lines[4], lines[5], lines[6])
+        print(lines[1:8])
     if user_gender=="Girl" and user_number =="8":
-        print(lines[0], lines[1], lines[2], lines[3], lines[4], lines[5], lines[6], lines[7])
+        print(lines[1:9])
     if user_gender =="Girl" and user_number =="9":
-        print(lines[0], lines[1], lines[2], lines[3], lines[4], lines[5], lines[6], lines[7], lines[8])
+        print(lines[1:10])
     if user_gender =="Girl" and user_number =="10":
-        print(lines[0], lines[1], lines[2], lines[3], lines[4], lines[5], lines[6], lines[7], lines[8], lines[9])
+        print(lines[1:11])
     elif user_gender =="Boy" and user_number =="1":
         print(lines[12])
     elif user_gender =="Boy" and user_number =="2":
@@ -69,12 +73,43 @@ def print_name3(user_gender, user_number):
         print(lines[12], lines[13], lines[14], lines[15])
     elif user_gender =="Boy" and user_number =="5":
         print(lines[12], lines[13], lines[14], lines[15], lines[16])
+    elif user_gender =="Boy" and user_number =="6":
+        print(lines[12], lines[13], lines[14], lines[15], lines[16], lines[17])
+    elif user_gender =="Boy" and user_number =="7":
+        print(lines[12], lines[13], lines[14], lines[15], lines[16], lines[17], lines[18])
+    elif user_gender =="Boy" and user_number =="8":
+        print(lines[12], lines[13], lines[14], lines[15], lines[16], lines[17], lines[18], lines[19])
+    elif user_gender =="Boy" and user_number =="9":
+        print(lines[12], lines[13], lines[14], lines[15], lines[16], lines[17], lines[18], lines[19], lines[20])
+    elif user_gender =="Boy" and user_number =="10":
+        print(lines[12], lines[13], lines[14], lines[15], lines[16], lines[17], lines[18], lines[19], lines[20], lines[21])
+    elif user_gender =="Gender Neutral" and user_number =="1":
+        print(lines[23:24])
+    elif user_gender =="Gender Neutral" and user_number =="2":
+        print(lines[23:25])
+    elif user_gender =="Gender Neutral" and user_number =="3":
+        print(lines[23:26])
+    elif user_gender =="Gender Neutral" and user_number =="4":
+        print(lines[23:27])
+    elif user_gender =="Gender Neutral" and user_number =="5":
+        print(lines[23:28])
+    elif user_gender =="Gender Neutral" and user_number =="6":
+        print(lines[23:29])
+    elif user_gender =="Gender Neutral" and user_number =="7":
+        print(lines[23:30])
+    elif user_gender =="Gender Neutral" and user_number =="8":
+        print(lines[23:31])
+    elif user_gender =="Gender Neutral" and user_number =="9":
+        print(lines[23:32])
+    elif user_gender =="Gender Neutral" and user_number =="10":
+        print(lines[23:33])
+
+    
     
 
 
 
 
-    
 
 
 
@@ -83,7 +118,7 @@ gender_label = tk.Label(text="Enter a gender  :", width=26, height=2)
 gender_label.grid(row=1, column=1, sticky="n")
 
 # entry for gender
-gender_entry = tk.Entry(width=10)
+gender_entry = tk.Entry(width=20)
 gender_entry.grid(row=1, column=1, pady=10, sticky="s")
 
 
