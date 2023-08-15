@@ -12,6 +12,11 @@ lines = myfile.readlines()
 lines = [x.strip() for x in lines]
 
 
+opening_text =["", "Your names will show here when all fields are correctly filled :)", ""]
+
+for text in opening_text:
+    print(text)
+
 
 # creating main gui frame
 
@@ -32,8 +37,7 @@ info_gender.grid(row=1, column=0)
 info_number = tk.Label(text="Enter a number for a specific amount of names")
 info_number.grid(row=2, column=0)
 
-print("")
-print("!! Your names will show here :) ")
+
 
 
 # background frame for gender option
@@ -46,6 +50,10 @@ gender_frame.grid(row=1, column=1, sticky="nsew")
 
 number_frame = tk.Frame(master=window, bg="lightpink")
 number_frame.grid(row=2, column=1, sticky="nsew")
+
+
+
+# function for print statement for the names
 
 # main function to print the names 
 
@@ -77,7 +85,7 @@ def print_name3(user_gender, user_number):
     elif user_gender =="Boy" and user_number =="2":
         print(lines[12:14])
     elif user_gender =="Boy" and user_number =="3":
-        print(lines[12])
+        print(lines[12:15])
     elif user_gender =="Boy" and user_number =="4":
         print(lines[12:16])
     elif user_gender =="Boy" and user_number =="5":
@@ -169,7 +177,7 @@ gender_option.grid(row=1, column=1, pady=30,sticky='n')
 
 # label and entry for number
 
-number_label = tk.Label(text="Enter a number between 1 - 5", width=25, height=2)
+number_label = tk.Label(text="Enter a number between 1 - 10", width=25, height=2)
 number_label.grid(row=2, column=1, sticky="n")
 
 number_entry = tk.Entry(width=10)
@@ -208,6 +216,15 @@ number_button.grid(row=2, column=1, pady=10, sticky="se")
 generator_button = tk.Button(text="Generate Names", command= lambda: [print_name3(user_gender, user_number)], width=15, height=5, bg="red",
     fg="white")
 generator_button.grid(row=4, column=1)
+
+# help button for users
+
+def help():
+    tkinter.messagebox.showinfo("Information for error", "Please use the 'enter' button to validate your input.  The printed statment on the screen should show 'correct'")
+
+
+help_button = tk.Button(text="Why do I have no names?", command=help, height=2, width=20, bg="lightyellow")
+help_button.grid(row=3, column=2)
 
 
 window.mainloop()
