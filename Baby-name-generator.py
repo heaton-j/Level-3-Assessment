@@ -31,15 +31,6 @@ main_title = tk.Label(text="Baby Name Generator", width=18, height=6, font=('Tim
 main_title.grid(row=0, column=1)
 
 
-info_gender = tk.Label(text="Enter a gender for a specified name")
-info_gender.grid(row=1, column=0)
-
-info_number = tk.Label(text="Enter a number for a specific amount of names")
-info_number.grid(row=2, column=0)
-
-
-
-
 # background frame for gender option
 
 gender_frame = tk.Frame(master=window, bg="lightblue")
@@ -126,7 +117,7 @@ def print_name3(user_gender, user_number):
 
 # label  and entry for gender
 
-gender_label = tk.Label(text="Enter a gender  :", width=26, height=2)
+gender_label = tk.Label(text="Enter a gender from the following :", width=26, height=2)
 gender_label.grid(row=1, column=1, sticky="n")
 
 gender_entry = tk.Entry(width=20)
@@ -215,16 +206,16 @@ number_button.grid(row=2, column=1, pady=10, sticky="se")
 
 generator_button = tk.Button(text="Generate Names", command= lambda: [print_name3(user_gender, user_number)], width=15, height=5, bg="red",
     fg="white")
-generator_button.grid(row=4, column=1)
+generator_button.grid(row=4, column=1, pady=20)
 
 # help button for users
 
 def help():
-    tkinter.messagebox.showinfo("Information for error", "Please use the 'enter' button to validate your input.  The printed statment on the screen should show 'correct'")
+    tkinter.messagebox.showinfo("Information for error", "Please use the 'enter' button to validate your input if unsure.  The printed statment on the screen should show 'correct'")
 
 
-help_button = tk.Button(text="Why do I have no names?", command=help, height=2, width=20, bg="lightyellow")
-help_button.grid(row=3, column=2)
+help_button = tk.Button(text="Why do I have no names?", command=help, height=2, width=20, bg="lightgreen")
+help_button.grid(row=0, column=2)
 
 
 window.mainloop()
