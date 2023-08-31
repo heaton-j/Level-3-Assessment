@@ -11,6 +11,7 @@ lines = myfile.readlines()
 
 lines = [x.strip() for x in lines]
 
+# opening line for users in the terminal
 
 opening_text =["", "Your names will show here when all fields are correctly filled :)", ""]
 
@@ -91,25 +92,25 @@ def print_name3(user_gender, user_number):
         print(lines[12:21])
     elif user_gender =="Boy" and user_number =="10":
         print(lines[12:22])
-    elif user_gender =="Gender Neutral" and user_number =="1":
+    elif user_gender =="Unisex" and user_number =="1":
         print(lines[23:24])
-    elif user_gender =="Gender Neutral" and user_number =="2":
+    elif user_gender =="Unisex" and user_number =="2":
         print(lines[23:25])
-    elif user_gender =="Gender Neutral" and user_number =="3":
+    elif user_gender =="Unisex" and user_number =="3":
         print(lines[23:26])
-    elif user_gender =="Gender Neutral" and user_number =="4":
+    elif user_gender =="Unisex" and user_number =="4":
         print(lines[23:27])
-    elif user_gender =="Gender Neutral" and user_number =="5":
+    elif user_gender =="Unisex" and user_number =="5":
         print(lines[23:28])
-    elif user_gender =="Gender Neutral" and user_number =="6":
+    elif user_gender =="Unisex" and user_number =="6":
         print(lines[23:29])
-    elif user_gender =="Gender Neutral" and user_number =="7":
+    elif user_gender =="Unisex" and user_number =="7":
         print(lines[23:30])
-    elif user_gender =="Gender Neutral" and user_number =="8":
+    elif user_gender =="Unisex" and user_number =="8":
         print(lines[23:31])
-    elif user_gender =="Gender Neutral" and user_number =="9":
+    elif user_gender =="Unisex" and user_number =="9":
         print(lines[23:32])
-    elif user_gender =="Gender Neutral" and user_number =="10":
+    elif user_gender =="Unisex" and user_number =="10":
         print(lines[23:33])
 
     
@@ -133,7 +134,7 @@ enter = "Please enter"
 correct = "Correct!"
 enter2 = "Please re-enter"
 
-genders = ['Girl', 'Boy', 'Gender Neutral']
+genders = ['Girl', 'Boy', 'Unisex']
 
 # gender function to get gender from user 
 
@@ -161,7 +162,7 @@ gender_button = tk.Button(text="Enter", width=5, command = isGender)
 gender_button.grid(row=1, column=1, pady=10, sticky="se")
 
 
-gender_option = tk.Label(text="Boy, Girl, Gender Neutral")
+gender_option = tk.Label(text="Boy, Girl, Unisex")
 gender_option.grid(row=1, column=1, pady=30,sticky='n')
 
 
