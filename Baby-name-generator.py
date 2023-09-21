@@ -13,7 +13,8 @@ lines = [x.strip() for x in lines]
 
 # opening line for users in the terminal
 
-opening_text =["", "Your names will show here when all fields are correctly filled :)", ""]
+opening_text =["", "Your names will show here when all fields are correctly "
+                "filled :",""]
 
 for text in opening_text:
     print(text)
@@ -28,7 +29,8 @@ window.columnconfigure([0, 1, 2], minsize=200, weight=1)
 
 # Important titles for generator
 
-main_title = tk.Label(text="Baby Name Generator", width=18, height=6, font=('Times', 20))
+main_title = tk.Label(text="Baby Name Generator", width=18, height=6,
+                        font=('Times', 20))
 main_title.grid(row=0, column=1)
 
 
@@ -118,7 +120,8 @@ def print_name3(user_gender, user_number):
 
 # label  and entry for gender
 
-gender_label = tk.Label(text="Enter a gender from the following :", width=26, height=2)
+gender_label = tk.Label(text="Enter a gender from the following :", width=26,
+                         height=2)
 gender_label.grid(row=1, column=1, sticky="n")
 
 gender_entry = tk.Entry(width=20)
@@ -169,7 +172,8 @@ gender_option.grid(row=1, column=1, pady=30,sticky='n')
 
 # label and entry for number
 
-number_label = tk.Label(text="Enter a number between 1 - 10", width=25, height=2)
+number_label = tk.Label(text="Enter a number between 1 - 10", width=25, 
+                        height=2)
 number_label.grid(row=2, column=1, sticky="n")
 
 number_entry = tk.Entry(width=10)
@@ -205,18 +209,25 @@ number_button.grid(row=2, column=1, pady=10, sticky="se")
     
 # final button for generating the names
 
-generator_button = tk.Button(text="Generate Names", command= lambda: [print_name3(user_gender, user_number)], width=15, height=5, bg="red",
-    fg="white")
+generator_button = tk.Button(text="Generate Names", command= lambda: 
+                             [print_name3(user_gender, user_number)], width=15,
+                             height=5, bg="red",fg="white")
 generator_button.grid(row=4, column=1, pady=20)
 
 # help button for users
 
 def help():
-    tkinter.messagebox.showinfo("Information for error", "Please use the 'enter' button to validate your input if unsure.  The printed statment on the screen should show 'correct'")
+    tkinter.messagebox.showinfo("Information for error", 
+                                "Please use the 'enter' button to validate your"
+                                " input if unsure. The printed statment on the " 
+                                "screen should show 'correct'. Remember the "
+                                "gender should start with a capital letter and "
+                                "the number should be written numerically.")
 
 
-help_button = tk.Button(text="Why do I have no names?", command=help, height=2, width=20, bg="lightgreen")
-help_button.grid(row=0, column=2)
+help_button = tk.Button(text="Why do I have no names?", command=help, height=2,
+                         width=20, bg="lightgreen")
+help_button.grid(row=0, column=2) 
 
 
 window.mainloop()
